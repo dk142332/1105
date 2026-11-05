@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- 문서의 문자 인코딩을 UTF-8로 설정합니다. -->
+  <meta charset="UTF-8">
+  <!-- 모바일 및 데스크톱 반응형 뷰포트 설정입니다. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 웹 페이지 제목입니다. -->
+  <title>실시간 대기오염 정보 조회</title>
+  <!-- 반응형 스타일시트 연결입니다. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 전체 화면 레이아웃 컨테이너입니다. -->
+  <div class="container">
+    <!-- 헤더 타이틀 영역입니다. -->
+    <header class="header">
+      <h1>실시간 대기오염 정보</h1>
+      <p class="subtitle">에어코리아 측정소별 실시간 미세먼지 현황</p>
+    </header>
+
+    <!-- 시도 선택 드롭다운 영역입니다. -->
+    <section class="control-section">
+      <label for="sidoSelect" class="select-label">지역 선택</label>
+      <select id="sidoSelect" class="sido-select">
+        <option value="전국">전국</option>
+        <option value="서울" selected>서울</option>
+        <option value="부산">부산</option>
+        <option value="대구">대구</option>
+        <option value="인천">인천</option>
+        <option value="광주">광주</option>
+        <option value="대전">대전</option>
+        <option value="울산">울산</option>
+        <option value="세종">세종</option>
+        <option value="경기">경기</option>
+        <option value="강원">강원</option>
+        <option value="충북">충북</option>
+        <option value="충남">충남</option>
+        <option value="전북">전북</option>
+        <option value="전남">전남</option>
+        <option value="경북">경북</option>
+        <option value="경남">경남</option>
+        <option value="제주">제주</option>
+      </select>
+    </section>
+
+    <!-- 선택 지역 평균 미세먼지 수치 요약 영역입니다. -->
+    <section class="summary-section">
+      <div class="summary-card">
+        <span class="summary-title" id="summaryAreaTitle">서울 평균 미세먼지</span>
+        <div class="summary-value" id="averagePm10">-</div>
+        <div class="summary-status" id="averageStatus">데이터를 불러오는 중입니다...</div>
+      </div>
+    </section>
+
+    <!-- 측정소별 대기질 카드가 출력되는 그리드 영역입니다. -->
+    <main class="card-grid" id="cardGrid">
+    </main>
+  </div>
+
+  <!-- /api/dust 서버리스 함수를 호출하여 화면을 동적으로 렌더링하는 스크립트 연결입니다. -->
+  <script src="script.js"></script>
+</body>
+</html>

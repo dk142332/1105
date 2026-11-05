@@ -1,0 +1,15 @@
+# 환경변수 파일 (인증키 및 비공개 설정)
+.env
+.env.local
+.env.*.local
+
+# Vercel 빌드 및 배포 설정 디렉토리
+.vercel
+
+# Node.js 패키지 의존성
+node_modules/
+
+# 운영체제 생성 임시 파일
+.DS_Store
+Thumbs.db
+
